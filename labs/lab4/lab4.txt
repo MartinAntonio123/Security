@@ -1,0 +1,4 @@
+The learning objective of this lab is for students to get familiar with one-way hash functions and
+Message Authentication Code (MAC). After finishing the lab, in addition to gaining a deeper
+understanding of the concepts, students should be able to use tools and write programs to
+generate one-way hash value and MAC for a given message.
