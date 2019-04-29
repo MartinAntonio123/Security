@@ -3,8 +3,8 @@
 #include <string.h>
 
 #define MAX_LENGTH 16 // A global variable t define max-length
-
-void print_hex(int len, char *text)
+// compile: gcc project-1.c -lssl -lcrypto
+void print_hex(int len, unsigned char *text)
 {
 	for(int j = 0; j < len; j++)
 	{
