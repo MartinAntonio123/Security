@@ -6,8 +6,7 @@
 
 void print_hex(int len, unsigned char *text)
 {
-	int j;
-	for(j = 0; j < len; j++)
+	for(int j = 0; j < len; j++)
 	{
 		/* Use a loop to print out the buffer */
 		printf("%x",text[j] );
@@ -44,11 +43,11 @@ int main (int argc, const char *argv[])
 
 	while (fgets(key, MAX_LENGTH, fp) != NULL)
 	{
-		for(i = 0; i < MAX_LENGTH; i++)
+		for(int i = 0; i < MAX_LENGTH; i++)
 		{
 			if (key[i] == '\n' || key[i] == 0 ) //when key is less than 16 characters, the extra left part is filled with " "
 			{
-				for (j = i; j < strlen(key); j++)
+				for (int j = i; j < strlen(key); j++)
 				{
 					key[j] = ' ';
 				}
@@ -85,7 +84,7 @@ int main (int argc, const char *argv[])
 		//print curret key and its corresponding ciphertext
 		printf ("The key is : %s       The Corresponding Cipher Text Is:  ", key);
 
-		for(j = 0; j < outlen; j++)
+		for(int j = 0; j < outlen; j++)
 		{
 			/* Use a loop to print out the buffer */
 			printf("%x",outbuf[j] );
