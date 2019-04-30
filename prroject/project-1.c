@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include "openssl/evp.h"
 #include <string.h>
-
-#define MAX_LENGTH 16 // A global variable t define max-length
 // compile: gcc project-1.c -lssl -lcrypto
+#define MAX_LENGTH 16 // A global variable t define max-length
+
 void print_hex(int len, unsigned char *text)
 {
 	for(int j = 0; j < len; j++)
@@ -30,7 +30,6 @@ int main (int argc, const char *argv[])
 
 	// Some other variables that are used in the program
 	int outlen = 0, tmplen = 0, flag = 0;
-	/* You may want to declare some additional variables to be used as flags*/
 
 	EVP_CIPHER_CTX *ctx;
 	//ctx = EVP_CIPHER_CTX_new();
@@ -65,8 +64,7 @@ int main (int argc, const char *argv[])
 		// Checking to see if EVP_EncryptUpdate is valid or not
 		if (!EVP_EncryptUpdate (ctx, outbuf, &outlen, plaintext, strlen(plaintext)))
 		{
-			/*Print Out a relevant Error Messege*/
-			printf("Error de no se que pedo!!!\n");
+			printf("Encription failure, not enougth length in outlen!!!\n");
 			return 0;
 		}
 
@@ -75,8 +73,7 @@ int main (int argc, const char *argv[])
 		// Checking to see if !EVP_EncryptFinal_ex is valid or not
 		if (!EVP_EncryptFinal_ex (ctx, outbuf + outlen, &tmplen))
 		{
-			/*Print Out a relevant Error Messege*/
-			printf("Error de no se que pedo 2!!!\n");
+			printf("Data length unequal to data block size!!!\n");
 			return 0;
 		}
 
